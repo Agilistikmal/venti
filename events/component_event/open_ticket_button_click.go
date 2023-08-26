@@ -2,10 +2,10 @@ package component_event
 
 import (
 	"fmt"
-	"github.com/agilistikmal/venti/config"
-	"github.com/agilistikmal/venti/handler"
-	"github.com/agilistikmal/venti/helper/component_helper"
-	"github.com/agilistikmal/venti/helper/embed_helper"
+	"github.com/Agilistikmal/venti/config"
+	"github.com/Agilistikmal/venti/handler"
+	"github.com/Agilistikmal/venti/helper/component_helper"
+	"github.com/Agilistikmal/venti/helper/embed_helper"
 	"github.com/bwmarrin/discordgo"
 )
 

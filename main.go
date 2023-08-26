@@ -1,10 +1,10 @@
 package main
 
 import (
-	"github.com/agilistikmal/venti/commands"
-	"github.com/agilistikmal/venti/events"
-	"github.com/agilistikmal/venti/events/component_event"
-	"github.com/agilistikmal/venti/handler"
+	"github.com/Agilistikmal/venti/commands"
+	"github.com/Agilistikmal/venti/events"
+	"github.com/Agilistikmal/venti/events/component_event"
+	"github.com/Agilistikmal/venti/handler"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
 	"os"

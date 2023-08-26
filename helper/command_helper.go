@@ -1,7 +1,7 @@
 package helper
 
 import (
-	"github.com/agilistikmal/venti/config"
+	"github.com/Agilistikmal/venti/config"
 	"strings"
 )
 

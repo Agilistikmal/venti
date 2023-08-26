@@ -1,4 +1,4 @@
-module github.com/agilistikmal/venti
+module github.com/Agilistikmal/venti
 
 go 1.19
 

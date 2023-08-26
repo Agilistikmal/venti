@@ -1,7 +1,7 @@
 package events
 
 import (
-	"github.com/agilistikmal/venti/handler"
+	"github.com/Agilistikmal/venti/handler"
 	"github.com/bwmarrin/discordgo"
 	"log"
 )

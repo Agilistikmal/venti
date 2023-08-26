@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/agilistikmal/venti/helper/embed_helper"
+	"github.com/Agilistikmal/venti/helper/embed_helper"
 	"github.com/bwmarrin/discordgo"
 )
 
