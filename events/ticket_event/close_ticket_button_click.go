@@ -1,4 +1,4 @@
-package component_event
+package ticket_event
 
 import "github.com/bwmarrin/discordgo"
 

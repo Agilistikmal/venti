@@ -3,7 +3,8 @@ package main
 import (
 	"github.com/Agilistikmal/venti/commands"
 	"github.com/Agilistikmal/venti/events"
-	"github.com/Agilistikmal/venti/events/component_event"
+	"github.com/Agilistikmal/venti/events/faq_event"
+	"github.com/Agilistikmal/venti/events/ticket_event"
 	"github.com/Agilistikmal/venti/handler"
 	"github.com/bwmarrin/discordgo"
 	"github.com/joho/godotenv"
@@ -32,8 +33,15 @@ func main() {
 }
 
 func RegisterEvents(bot *discordgo.Session) {
+	// Events
 	bot.AddHandler(events.OnReady)
+
+	// Commands
 	bot.AddHandler(commands.TicketCommand)
-	bot.AddHandler(component_event.OpenTicketButtonClick)
-	bot.AddHandler(component_event.CloseTicketButtonClick)
+	bot.AddHandler(commands.FAQCommand)
+
+	// Component Events
+	bot.AddHandler(ticket_event.OpenTicketButtonClick)
+	bot.AddHandler(ticket_event.CloseTicketButtonClick)
+	bot.AddHandler(faq_event.ReplyFAQ)
 }

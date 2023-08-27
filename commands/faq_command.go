@@ -8,13 +8,13 @@ import (
 	"github.com/bwmarrin/discordgo"
 )
 
-func TicketCommand(bot *discordgo.Session, message *discordgo.MessageCreate) {
+func FAQCommand(bot *discordgo.Session, message *discordgo.MessageCreate) {
 	command, args := helper.GetCommand(message.Content)
-	if command != "ticket" {
+	if command != "faq" {
 		return
 	}
 	if len(args) < 1 {
-		bot.ChannelMessageSendEmbed(message.ChannelID, embed_helper.InvalidUsageError(config.Prefix+"ticket panel <channel>"))
+		bot.ChannelMessageSendEmbed(message.ChannelID, embed_helper.InvalidUsageError(config.Prefix+"faq panel <channel>"))
 		return
 	}
 	if args[0] == "panel" {
@@ -23,16 +23,16 @@ func TicketCommand(bot *discordgo.Session, message *discordgo.MessageCreate) {
 			return
 		}
 		if len(args) < 2 {
-			bot.ChannelMessageSendEmbed(message.ChannelID, embed_helper.InvalidUsageError(config.Prefix+"ticket panel <channel>"))
+			bot.ChannelMessageSendEmbed(message.ChannelID, embed_helper.InvalidUsageError(config.Prefix+"faq panel <channel>"))
 			return
 		}
 		channelId := helper.ChannelMentionToChannelId(args[1])
 		embed := embed_helper.CustomWithTimestamp(
-			"Pusat Informasi dan Bantuan",
-			"Jika ada yang perlu ditanyakan silahkan klik tombol **Open Ticket** dibawah ini.\n\n*__Bukan untuk pembelian__, pembelian melalui channel <#1039148098808725624>",
+			"FAQ (Frequently Asked Question)",
+			"Berikut adalah pertanyaan yang sering ditanyakan. Anda bisa melihat jawaban dari daftar pertanyaan dibawah ini.",
 			embed_helper.WHITE,
 		)
-		components := component_helper.CreateButton("Open Ticket", discordgo.SecondaryButton, "open-ticket")
+		components := component_helper.CreateSelectMenu("Pilih pertanyaan disini", "faq-list", config.FAQList)
 		_, err := bot.ChannelMessageSendComplex(channelId, &discordgo.MessageSend{
 			Embed:      embed,
 			Components: components,
