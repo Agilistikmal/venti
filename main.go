@@ -35,6 +35,7 @@ func main() {
 func RegisterEvents(bot *discordgo.Session) {
 	// Events
 	bot.AddHandler(events.OnReady)
+	bot.AddHandler(events.OnJoin)
 
 	// Commands
 	bot.AddHandler(commands.TicketCommand)
