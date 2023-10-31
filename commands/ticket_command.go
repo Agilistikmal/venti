@@ -18,7 +18,7 @@ func TicketCommand(bot *discordgo.Session, message *discordgo.MessageCreate) {
 		return
 	}
 	if args[0] == "panel" {
-		if helper.Contains(message.Member.Roles, config.StaffRoleId) == false {
+		if helper.ContainOnList(message.Member.Roles, config.StaffRoleId) == false {
 			bot.ChannelMessageSendEmbedReply(message.ChannelID, embed_helper.NoAccessError(), message.Reference())
 			return
 		}

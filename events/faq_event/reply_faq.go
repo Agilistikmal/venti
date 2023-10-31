@@ -7,6 +7,9 @@ import (
 )
 
 func ReplyFAQ(bot *discordgo.Session, interaction *discordgo.InteractionCreate) {
+	if interaction.Type != discordgo.InteractionMessageComponent {
+		return
+	}
 	if interaction.MessageComponentData().CustomID != "faq-list" {
 		return
 	}

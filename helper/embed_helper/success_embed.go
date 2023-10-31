@@ -6,7 +6,7 @@ func SuccessWithMessage(message string) *discordgo.MessageEmbed {
 	return &discordgo.MessageEmbed{
 		Title:       "Success",
 		Description: message,
-		Color:       RED,
+		Color:       GREEN,
 		Footer: &discordgo.MessageEmbedFooter{
 			Text: "Venti v1 by safatanc.com",
 		},

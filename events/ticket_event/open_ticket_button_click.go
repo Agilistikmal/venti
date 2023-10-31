@@ -10,6 +10,9 @@ import (
 )
 
 func OpenTicketButtonClick(bot *discordgo.Session, interaction *discordgo.InteractionCreate) {
+	if interaction.Type != discordgo.InteractionMessageComponent {
+		return
+	}
 	if interaction.MessageComponentData().CustomID != "open-ticket" {
 		return
 	}
